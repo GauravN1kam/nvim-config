@@ -14,5 +14,6 @@ return {
       },
       signature = { enabled = true }
     },
+    config = function() end,
   },
 }
