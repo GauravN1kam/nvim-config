@@ -19,7 +19,28 @@ vim.keymap.set("n", "<space>tn", ":tabn<CR>")     --  go to next tab
 vim.keymap.set("n", "<space>tp", ":tabp<CR>")     --  go to previous tab
 
 
+require 'nvim-treesitter.install'.compilers = { "clang-cl" }
 
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, { pattern = { "*.xaml" }, command = "setf xml" })
+
+local toggleBack = true
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+function ToggleBackground()
+  if toggleBack == false then
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  end
+  if toggleBack == true then
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+  end
+  toggleBack = not toggleBack
+  print(toggleBack)
+end
+
+-- vim.keymap.set("n", "<space>z", ":NvimTreeToggle<CR>")
 -- vim.diagnostic.config({
 --   virtual_text = {
 --     prefix = "●", -- or "■", "▶", "", etc.
