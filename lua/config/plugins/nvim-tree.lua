@@ -1,0 +1,33 @@
+return {
+  -- {
+  --   "nvim-tree/nvim-tree.lua",
+  --   version = "*",
+  --   dependencies = {
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   config = function()
+  --     local ntree = require("nvim-tree")
+  --     vim.g.loaded_netrw = 1
+  --     vim.g.loaded_netrwPlugin = 1
+  --     vim.opt.termguicolors = true
+  --     vim.keymap.set("n", "<space>z", ":NvimTreeToggle<CR>")
+  --     vim.keymap.set("n", "<space>q", ":NvimTreeOpen<CR>")
+  --     ntree.setup {
+  --       require("nvim-tree").setup({
+  --         sort = {
+  --           sorter = "case_sensitive",
+  --         },
+  --         view = {
+  --           width = 30,
+  --         },
+  --         renderer = {
+  --           group_empty = true,
+  --         },
+  --         filters = {
+  --           dotfiles = true,
+  --         },
+  --       })
+  --     }
+  --   end
+  -- }
+}
